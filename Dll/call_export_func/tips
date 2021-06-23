@@ -1,0 +1,12 @@
+首先開啟 DLL 專案, 並複製 Dll.cpp 和 Dll.h (dllmain.cpp 沒動)
+編譯後, 會出現 Dll.dll
+
+接著開啟另一個 cpp 專案, 將 Dll.dll 放到執行後存放 exe 的資料夾, 執行 simple.cpp
+
+如果 GetProcessAddr 拿到 NULL, 可用 dumpbin.exe -Exports Dll.dll 看看名字是否被 mangle
+
+關閉 mangle : 
+#define DLL_API extern "C" __declspec(dllexport)
+
+關閉 ILT:
+project -> properties -> Linker -> General -> Disable Increment

@@ -8,7 +8,7 @@
 #define PORT ("8888")
 #define BUFF_LEN (512)
 
-int maina()
+int main()
 {
 	WSADATA wsaData;
 	SOCKET ListenSocket, ClientSocket;
