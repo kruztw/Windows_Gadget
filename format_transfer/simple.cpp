@@ -1,26 +1,24 @@
-// 註: 尚未測試過
-
+#include <windows.h>
 #include <stdio.h>
 #include <tchar.h>
 #include <strsafe.h>
-#include <stdio.h>
 
 
 int main()
 {
-    LPCTSTR format_LPCTSTR = L"aaaa";
+    LPCTSTR format_LPCTSTR = L"LPCTSTR";
     TCHAR format_tchar[10];
-    LPCWSTR format_LPCWSTR = L"llll";
-    LPCWSTR format_LPCWSTR = L"aaaa";
+    LPCWSTR format_LPCWSTR = L"LPCWSTR";
+    wchar_t format_wchart[10] = L"wchart";
+    LPVOID format_LPVOID = format_wchart;
 
     // LPCWSTR -> LPWSTR
-    LPWSTR  format_LPWSTR  = const_cast<LPWSTR>(format_LPCWSTR);
+    LPWSTR  format_LPWSTR = const_cast<LPWSTR>(format_LPCWSTR);
 
     // LPCTSTR -> tchar
     StringCchCopy(format_tchar, 10, format_LPCTSTR);
 
-
-    _tprintf(TEXT("%s aaaa"), format_tchar);
-
-
+    _tprintf(TEXT("print tchar: %s\n"), format_tchar);
+    wprintf(L"print LPVOID: %s\n", (wchar_t*)format_LPVOID);
 }
+

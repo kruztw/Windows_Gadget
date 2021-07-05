@@ -30,7 +30,7 @@ int __cdecl main(int argc, TCHAR* argv[])
 
     if (file1 == INVALID_HANDLE_VALUE || file2 == INVALID_HANDLE_VALUE)
     {
-        printf("CreateFile2 error (%d)\n", GetLastError());
+        printf("%d, %d, CreateFile error (%d)\n", file1, file2, GetLastError());
         return -1;
     }
 
@@ -41,4 +41,7 @@ int __cdecl main(int argc, TCHAR* argv[])
 
     CloseHandle(file1);
     CloseHandle(file2);
+
+    system("pause");
+    remove("output_file.txt");
 }

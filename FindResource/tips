@@ -1,0 +1,8 @@
+Solution Explorer 的 Resource Files 右鍵 add -> Resources ... -> Import ... -> 選個檔案 (若類型沒有被包含, 會跳出 type, 可自行定義 (e.g. MYTYPE) )
+
+此時 Header Files 會出現 resource.h 
+
+記得在 .cpp 檔 include "resource.h"
+
+
+Resource Files 會出現 <proj_name>.rc (e.g. simple.rc)
