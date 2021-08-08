@@ -5,18 +5,10 @@
 // DLL_API functions as being imported from a DLL, whereas this DLL sees symbols
 // defined with this macro as being exported.
 #ifdef DLL_EXPORTS
-#define DLL_API __declspec(dllexport)
+#define DLL_API extern "C" __declspec(dllexport)
 #else
 #define DLL_API __declspec(dllimport)
 #endif
 
-// This class is exported from the dll
-class DLL_API CDll {
-public:
-	CDll(void);
-	// TODO: add your methods here.
-};
+DLL_API int __stdcall say_hi();
 
-extern DLL_API int nDll;
-
-DLL_API int fnDll(void);

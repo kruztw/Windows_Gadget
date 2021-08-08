@@ -1,0 +1,12 @@
+來源: https://github.com/namazso/IDAShell
+
+為了方便起見, 我保存整個 solution
+測試環境 visual studio 2019, release x64
+執行完會生成 dll 檔
+
+雙擊 installer.iss, compile (ctrl + F9) 後會生成 IDAShell_setup.exe
+安裝完後即可使用
+
+installer.iss 主要負責將 GUID 以及程式 (前面生成的 dll) 註冊到 regedit
+
+

@@ -107,9 +107,9 @@ int register_dll()
 
 int main(int argc, char **argv)
 {
-	IExample		*exampleObj;
+	IExample        *exampleObj;
 	IClassFactory	*classFactory;
-	HRESULT			hr;
+	HRESULT	        hr;
 
 	if (register_dll()) {
 		printf("register failed\n");
