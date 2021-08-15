@@ -7,6 +7,14 @@
 雙擊 installer.iss, compile (ctrl + F9) 後會生成 IDAShell_setup.exe
 安裝完後即可使用
 
+(innosetup)
 installer.iss 主要負責將 GUID 以及程式 (前面生成的 dll) 註冊到 regedit
 
+
+32bits:
+regsrv32 [/u] xxx.dll  # 用 cmd 註冊, 但必需有 DllRegisterServer 函式 (可透過建立 atl solution), 
+                       # IDAShell 沒用到, 但 https://www.codeproject.com/Articles/441/The-Complete-Idiot-s-Guide-to-Writing-Shell-Extens 有
+
+64bits:
+還不知道
 
